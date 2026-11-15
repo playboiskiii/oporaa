@@ -22,7 +22,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN") or "9121159502:AAFqGYXs1n-IRyM5kDp-S1n46ZA3kf
 GIGACHAT_KEY = os.getenv("GIGACHAT_KEY") or "MDFhMWRmNjctMTMzYS03Y2E4LWE1YmYtYjQ3OTdkMzQ0NWVmOjkyY2E4MjdiLThjMjktNDI2ZC1iMmExLTRiNGQ2NTg0YzhiMg=="
 # =======================================================
 
-GIGACHAT_MODEL = "GigaChat"  # можно "GigaChat-Pro" / "GigaChat-Max", если они есть в твоём тарифе
+GIGACHAT_MODEL = "GigaChat-3-Ultra"  # можно "GigaChat-Pro" / "GigaChat-Max", если они есть в твоём тарифе
 HISTORY_LIMIT = 20           # сколько последних сообщений помнить
 ALLOWED_USERS = set()        # например {123456789} — тогда ботом сможешь пользоваться только ты (id узнать: /id)
 # Характер агента и кризисные контакты — в файле prompt.py
