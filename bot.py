@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
-CERT = Path(__file__).with_name("Russian_Trusted_Root_CA")
+CERT = Path(__file__).with_name("Russian_Trusted_Root_CA.cer")
 if CERT.exists():
     giga = GigaChat(credentials=GIGACHAT_KEY, scope="GIGACHAT_API_PERS", model=GIGACHAT_MODEL,
                     ca_bundle_file=str(CERT), timeout=60)
