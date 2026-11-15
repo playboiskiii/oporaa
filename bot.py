@@ -122,7 +122,7 @@ async def ask_llm(user_id: int, text: str) -> str:
     messages = [{"role": "system", "content": sys_prompt}, *history[user_id]]
     async with giga_slot:
         resp = await giga.achat({"messages": messages, "temperature": 0.7})
-    answer = resp.choices.message.content or "(пустой ответ)"
+    answer = resp.choices[0].message.content or "(пустой ответ)"
     history[user_id].append({"role": "assistant", "content": answer})
     return answer
 
@@ -140,7 +140,7 @@ async def cmd_lang(message: Message):
 
 @dp.callback_query(F.data.startswith("set_lang:"))
 async def on_lang_select(callback: CallbackQuery):
-    lang = callback.data.split(":")
+    lang = callback.data.split(":")[1]
     if lang not in TEXTS:
         lang = "ru"
     user_lang[callback.from_user.id] = lang
